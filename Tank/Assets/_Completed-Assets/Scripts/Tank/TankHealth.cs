@@ -6,12 +6,12 @@ namespace Complete
     public class TankHealth : MonoBehaviour
     {
         public float m_StartingHealth = 100f;               // The amount of health each tank starts with.
+        public float maxHealth = 100f;
         public Slider m_Slider;                             // The slider to represent how much health the tank currently has.
         public Image m_FillImage;                           // The image component of the slider.
         public Color m_FullHealthColor = Color.green;       // The color the health bar will be when on full health.
         public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
         public GameObject m_ExplosionPrefab;                // A prefab that will be instantiated in Awake, then used whenever the tank dies.
-        
         
         private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
         private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
@@ -58,10 +58,16 @@ namespace Complete
             }
         }
 
-        public void Heal()
+        public void Heal(float ammount)
         {
-            // Reduce current health by the amount of damage done.
-            m_CurrentHealth = 100f ;
+            if(m_CurrentHealth+ ammount >= maxHealth)
+            {
+                m_CurrentHealth = maxHealth;
+            }
+            else
+            {
+                m_CurrentHealth = m_CurrentHealth + ammount;
+            }
 
             // Change the UI elements appropriately.
             SetHealthUI();

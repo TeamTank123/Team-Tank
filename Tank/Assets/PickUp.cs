@@ -4,6 +4,7 @@ namespace Complete
 {
     public class PickUp : MonoBehaviour
     {
+        public float healthAmount = 50f;
 
         void OnTriggerEnter(Collider other)
         {
@@ -12,7 +13,7 @@ namespace Complete
                 gameObject.SetActive(false);
                 Rigidbody targetRigidbody = other.GetComponent<Rigidbody>();
                 TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth>();
-                targetHealth.Heal();
+                targetHealth.Heal(healthAmount);
             }
 
         }
