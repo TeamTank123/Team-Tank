@@ -7,7 +7,6 @@ namespace Complete
     public class TankShooting : MonoBehaviour
     {
         public int m_PlayerNumber = 1;              // Used to identify the different players.
-		public Rigidbody m_Mine; 
 		public Rigidbody m_Shell;                   // Prefab of the shell.
         public Transform m_FireTransform;           // A child of the tank where the shells are spawned.
         public Slider m_AimSlider;                  // A child of the tank that displays the current launch force.
@@ -85,9 +84,7 @@ namespace Complete
 
         public void Fire ()
         {
-			m_Mine.transform.position = new Vector3(m_FireTransform.position.x, 0.1f, m_FireTransform.position.z);
-			Rigidbody mineInstance =
-				Instantiate (m_Mine) as Rigidbody;
+
 			
             // Set the fired flag so only Fire is only called once.
             m_Fired = true;
