@@ -13,16 +13,8 @@ public class Turret : MonoBehaviour {
     public float turnSpeed = 7f;
 
     private GameObject[] _enemy;
-	// Use this for initialization
-	void Start () {
-        _enemy = GameObject.FindGameObjectsWithTag(enemyTag);
-        InvokeRepeating("UpdateTarget", 0f, .5f);
 
-        
-       
-    }
-
-    // Update is called once per frame
+    
 
     void UpdateTarget () {
        
@@ -32,9 +24,9 @@ public class Turret : MonoBehaviour {
         {
             float distanceToEnemy = Vector3.Distance(transform.position, e.transform.position);
 
-            TankShooting t = e.gameObject.GetComponent<TankShooting>();
+            Complete.TankShooting t = e.gameObject.GetComponent<Complete.TankShooting>();
             print(t.m_PlayerNumber);
-                if (distanceToEnemy < shortestDistance  && playerNumber != e.GetComponent<TankShooting>().m_PlayerNumber)
+                if (distanceToEnemy < shortestDistance  && playerNumber != e.GetComponent<Complete.TankShooting>().m_PlayerNumber)
                 {
                     shortestDistance = distanceToEnemy;
                     nearestEnemy = e;
@@ -53,6 +45,11 @@ public class Turret : MonoBehaviour {
         }
     }
 	void Update () {
+        _enemy = GameObject.FindGameObjectsWithTag(enemyTag);
+        UpdateTarget();
+
+        print(_enemy.Length);
+
         if (target == null)
             return;
 

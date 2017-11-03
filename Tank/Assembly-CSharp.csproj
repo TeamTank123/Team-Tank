@@ -60,6 +60,7 @@
      <Compile Include="Assets\_Completed-Assets\Scripts\Tank\TankHealth.cs" />
      <Compile Include="Assets\_Completed-Assets\Scripts\Tank\TankMovement.cs" />
      <Compile Include="Assets\_Completed-Assets\Scripts\Tank\TankShooting.cs" />
+     <Compile Include="Assets\_Completed-Assets\Scripts\Turrets\Turret.cs" />
      <Compile Include="Assets\_Completed-Assets\Scripts\UI\UIDirectionControl.cs" />
      <Compile Include="Assets\Barbedwire.cs" />
      <Compile Include="Assets\PickUp.cs" />
@@ -70,7 +71,6 @@
      <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
      <Compile Include="Assets\Scripts\Tank\TankHealth.cs" />
      <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
-     <Compile Include="Assets\Scripts\Tank\TankShooting.cs" />
      <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
      <Compile Include="Assets\Turret.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\TutorialInfo.cs" />
@@ -132,6 +132,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\Models\Turrets Assets\README.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />

@@ -65,3 +65,4 @@ C:\Users\kim\Documents\GitHub\Team-Tank\Tank\Temp\bin\Debug\UnityEngine.SpatialT
 C:\Users\kim\Documents\GitHub\Team-Tank\Tank\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\kim\Documents\GitHub\Team-Tank\Tank\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\kim\Documents\GitHub\Team-Tank\Tank\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Kim\Documents\GitHub\Team-Tank\Tank\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
