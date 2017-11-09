@@ -13,6 +13,8 @@ namespace Complete
         public float m_MaxDamage = 5f;                    // The amount of damage done if the explosion is centred on a tank.
         public float m_ExplosionForce = 1000f;              // The amount of force added to a tank at the centre of the explosion.
         public float m_ExplosionRadius = 5f;                // The maximum distance away from the explosion tanks can be and are still affected.
+
+        public AudioSource minePeep;
         private bool exploded = false;                   // a variable to avoid a endlsess loop
         private float timer = 10;
 		private bool aktiv = false;
@@ -26,7 +28,9 @@ namespace Complete
 				if (timeTillAkitv <= 0) {
 					aktiv = true;
 					blinken.gameObject.SetActive (true);
-				}
+                    minePeep.Play();
+
+                }
 			}
 
 
