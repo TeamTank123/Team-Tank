@@ -186,7 +186,7 @@ namespace Complete
             for (int i = 0; i < m_Tanks.Length; i++)
             {
                 // ... and if they are active, increment the counter.
-                if (m_Tanks[i].m_Instance.activeSelf)
+                if (m_Tanks[i].m_Instance.GetComponent<TankHealth>().getCurrentHealth()>0)
                     numTanksLeft++;
             }
 
@@ -203,7 +203,7 @@ namespace Complete
             for (int i = 0; i < m_Tanks.Length; i++)
             {
                 // ... and if one of them is active, it is the winner so return it.
-                if (m_Tanks[i].m_Instance.activeSelf)
+                if (m_Tanks[i].m_Instance.GetComponent<TankHealth>().getCurrentHealth() > 0)
                     return m_Tanks[i];
             }
 
