@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Complete;
 using UnityEngine;
 
 public class spawn : MonoBehaviour {
@@ -27,10 +29,22 @@ public class spawn : MonoBehaviour {
             SpawnObject();
         }
     }
+
+    internal void ObjectPicked(ISpawnable iSpawnable)
+    {
+        spawnTimer = spawnCd;
+        spawnLimit++;
+    }
+
     public void SpawnObject()
     {
-        Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2),0, Random.Range(-size.z / 2, size.z / 2));
-        Instantiate(objectPrefab, pos,Quaternion.identity);
+        Vector3 pos = center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2),0, UnityEngine.Random.Range(-size.z / 2, size.z / 2));
+        GameObject newSpawnObject = Instantiate(objectPrefab, pos,Quaternion.identity);
+        var iSpawnableScript = newSpawnObject.GetComponent<ISpawnable>();
+        if (iSpawnableScript != null)
+        {
+            iSpawnableScript.setSpawner(this);
+        }
     }
 
     private void OnDrawGizmosSelected()
