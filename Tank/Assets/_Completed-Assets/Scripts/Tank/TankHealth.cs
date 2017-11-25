@@ -13,9 +13,11 @@ namespace Complete
         public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
         public GameObject m_ExplosionPrefab;                // A prefab that will be instantiated in Awake, then used whenever the tank dies.
         public ParticleSystem dmgSmoke;
-
         public Rigidbody tankHead;
 
+        public GameObject shield;
+
+        private float _shieldPower = 0;
         private AudioSource m_ExplosionAudio;               // The audio source to play when the tank explodes.
         private ParticleSystem m_ExplosionParticles;        // The particle system the will play when the tank is destroyed.
         private float m_CurrentHealth;                      // How much health the tank currently has.
@@ -43,6 +45,7 @@ namespace Complete
 
         private void OnEnable()
         {
+            shield.SetActive(false);
             // When the tank is enabled, reset the tank's health and whether or not it's dead.
             m_CurrentHealth = m_StartingHealth;
             m_Dead = false;
@@ -58,20 +61,31 @@ namespace Complete
 
         public void TakeDamage(float amount)
         {
-            // Reduce current health by the amount of damage done.
-            m_CurrentHealth -= amount;
-
-            // Change the UI elements appropriately.
-            SetHealthUI();
-
-            // If the current health is at or below zero and it has not yet been registered, call OnDeath.
-            if (m_CurrentHealth <= 0f && !m_Dead)
+            if (_shieldPower <= 0)
             {
-                OnDeath();
+                // Reduce current health by the amount of damage done.
+                m_CurrentHealth -= amount;
+
+                // Change the UI elements appropriately.
+                SetHealthUI();
+
+                // If the current health is at or below zero and it has not yet been registered, call OnDeath.
+                if (m_CurrentHealth <= 0f && !m_Dead)
+                {
+                    OnDeath();
+                }
+                if (m_CurrentHealth <= maxHealth / 2)
+                {
+                    dmgSmoke.Play();
+                }
             }
-            if(m_CurrentHealth<= maxHealth / 2)
+            else
             {
-                dmgSmoke.Play();
+                _shieldPower -= amount;
+                if(_shieldPower <= 0)
+                {
+                    shield.SetActive(false);
+                }
             }
         }
 
@@ -129,6 +143,12 @@ namespace Complete
         public float getCurrentHealth()
         {
             return m_CurrentHealth;
+        }
+
+        public void aktivateShield()
+        {
+            shield.SetActive(true);
+            _shieldPower = 25f;
         }
     }
 }

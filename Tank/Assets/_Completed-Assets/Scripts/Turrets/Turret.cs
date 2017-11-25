@@ -17,8 +17,12 @@ public class Turret : MonoBehaviour {
     public float fireCd;
     public float bulletSpeed;
 
+    public AudioSource fireAudio;
+    public AudioSource reloadAudio;
+
     private float fireCdTmp;
     private GameObject[] _enemy;
+    private float _shootingIdleTime = 1f;
 
     void Start()
     {
@@ -39,18 +43,20 @@ public class Turret : MonoBehaviour {
                 {
                     shortestDistance = distanceToEnemy;
                     nearestEnemy = e;
-
-                }
+            }
             
         }
 
 
-        if(nearestEnemy != null && shortestDistance <= range)
+        if(nearestEnemy != null && shortestDistance <= range && target != nearestEnemy.transform)
         {
             target = nearestEnemy.transform;
+            reloadAudio.Play();
 
-        }else { target = null;
-
+        }
+        else if(shortestDistance > range)
+        {
+            target = null;
         }
     }
 	void Update () {
@@ -61,6 +67,7 @@ public class Turret : MonoBehaviour {
 
         if (target == null)
         {
+            _shootingIdleTime = 1f;
             return;
         }
 
@@ -69,8 +76,9 @@ public class Turret : MonoBehaviour {
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed ).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
+        _shootingIdleTime -= Time.deltaTime;
         fireCdTmp -= Time.deltaTime;
-        if (target != null&& fireCdTmp <= 0)
+        if (target != null && fireCdTmp <= 0 && target.GetComponent<Complete.TankHealth>().getCurrentHealth()>0 && _shootingIdleTime <= 0)
         {
             Fire();
             fireCdTmp = fireCd;
@@ -93,6 +101,8 @@ public class Turret : MonoBehaviour {
 
         // Add velocity to the bullet
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
+
+        fireAudio.Play();
 
         // Destroy the bullet after 2 seconds
         Destroy(bullet, 5.0f);

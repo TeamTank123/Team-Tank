@@ -12,9 +12,14 @@ namespace Complete
             {
                 gameObject.SetActive(false);
                 Rigidbody targetRigidbody = other.GetComponent<Rigidbody>();
-                TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth>();
-                targetHealth.Heal(healthAmount);
-                _spawn.ObjectPicked(this);
+                TankHealth tank = targetRigidbody.GetComponent<TankHealth>();
+                if (this.CompareTag("Canister")){
+                    tank.Heal(healthAmount);
+                }
+                else if (this.CompareTag("Shield")){
+                    tank.aktivateShield();
+                }
+                    _spawn.ObjectPicked(this);
             }
 
         }

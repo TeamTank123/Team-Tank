@@ -38,7 +38,7 @@ public class spawn : MonoBehaviour {
 
     public void SpawnObject()
     {
-        Vector3 pos = center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2),0, UnityEngine.Random.Range(-size.z / 2, size.z / 2));
+        Vector3 pos = center + new Vector3(UnityEngine.Random.Range(-size.x / 2, size.x / 2),size.y, UnityEngine.Random.Range(-size.z / 2, size.z / 2));
         GameObject newSpawnObject = Instantiate(objectPrefab, pos,Quaternion.identity);
         var iSpawnableScript = newSpawnObject.GetComponent<ISpawnable>();
         if (iSpawnableScript != null)

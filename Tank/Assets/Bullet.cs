@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print(other.tag);
+
 
 
         // Find the TankHealth script associated with the rigidbody.
