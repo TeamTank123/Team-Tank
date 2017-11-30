@@ -225,6 +225,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Completed-Assets\Rotater.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\Camera\CameraControl.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\_Completed-Assets\Scripts\Managers\TankManager.cs" />
@@ -241,14 +242,9 @@
     <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\ISpawnable.cs" />
     <Compile Include="Assets\KiTank.cs" />
+    <Compile Include="Assets\LoadSceneOnClick.cs" />
     <Compile Include="Assets\PickUp.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraControl.cs" />
-    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\TankManager.cs" />
-    <Compile Include="Assets\Scripts\Rotater.cs" />
-    <Compile Include="Assets\Scripts\Shell\ShellExplosion.cs" />
-    <Compile Include="Assets\Scripts\Tank\TankMovement.cs" />
-    <Compile Include="Assets\Scripts\UI\UIDirectionControl.cs" />
+    <Compile Include="Assets\QuitOnClick.cs" />
     <Compile Include="Assets\Turret.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\TutorialInfo.cs" />
   </ItemGroup>
