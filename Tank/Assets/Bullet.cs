@@ -20,7 +20,6 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        print(damage);
         // Deal this damage to the tank.
         targetHealth.TakeDamage(damage);
         Destroy(gameObject);

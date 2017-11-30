@@ -79,9 +79,6 @@ namespace Complete
             m_Instance.transform.position = m_SpawnPoint.position;
             m_Instance.transform.rotation = m_SpawnPoint.rotation;
 
-            m_Instance.GetComponent<TankHealth>().tankHead.transform.position = new Vector3(m_SpawnPoint.position.x, 1.1f, m_SpawnPoint.position.z);
-            m_Instance.GetComponent<TankHealth>().tankHead.transform.rotation = m_SpawnPoint.rotation;
-
 
             m_Instance.SetActive (false);
             m_Instance.SetActive (true);

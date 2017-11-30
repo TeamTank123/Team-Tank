@@ -33,16 +33,18 @@ public class Turret : MonoBehaviour {
        
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
-        foreach(GameObject e in _enemy)
+        foreach (GameObject e in _enemy)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, e.transform.position);
 
             Complete.TankShooting t = e.gameObject.GetComponent<Complete.TankShooting>();
-          
-                if (distanceToEnemy < shortestDistance  && playerNumber != e.GetComponent<Complete.TankShooting>().m_PlayerNumber)
+            if (t != null)
+            {
+                if (distanceToEnemy < shortestDistance && playerNumber != e.GetComponent<Complete.TankShooting>().m_PlayerNumber)
                 {
                     shortestDistance = distanceToEnemy;
                     nearestEnemy = e;
+                }
             }
             
         }

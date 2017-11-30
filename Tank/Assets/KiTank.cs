@@ -83,7 +83,6 @@ public class KiTank : MonoBehaviour {
             if (moveCordinaten >= coordinaten.Count-1 || moveCordinaten == 0)
             {
                 listIndecator *= -1;
-                print(listIndecator);
             }
         }
 
@@ -126,11 +125,13 @@ public class KiTank : MonoBehaviour {
             float distanceToEnemy = Vector3.Distance(transform.position, e.transform.position);
 
             Complete.TankShooting t = e.gameObject.GetComponent<Complete.TankShooting>();
-
-            if (distanceToEnemy < shortestDistance && playerNumber != e.GetComponent<Complete.TankShooting>().m_PlayerNumber)
+            if (t != null)
             {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = e;
+                if (distanceToEnemy < shortestDistance && playerNumber != e.GetComponent<Complete.TankShooting>().m_PlayerNumber)
+                {
+                    shortestDistance = distanceToEnemy;
+                    nearestEnemy = e;
+                }
             }
 
         }
@@ -152,6 +153,23 @@ public class KiTank : MonoBehaviour {
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+
+        if (target != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, target.position);
+        }
+        else
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawLine(transform.position, coordinaten[moveCordinaten]);
+        }
+
+        for(int i = 0; i < coordinaten.Count-1; i++)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(coordinaten[i], coordinaten[i+1]);
+        }
     }
 
     void Fire()

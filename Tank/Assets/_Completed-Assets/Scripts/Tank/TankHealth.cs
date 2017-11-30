@@ -13,7 +13,6 @@ namespace Complete
         public Color m_ZeroHealthColor = Color.red;         // The color the health bar will be when on no health.
         public GameObject m_ExplosionPrefab;                // A prefab that will be instantiated in Awake, then used whenever the tank dies.
         public ParticleSystem dmgSmoke;
-        public Rigidbody tankHead;
 
         public GameObject shield;
 
@@ -23,13 +22,6 @@ namespace Complete
         private float m_CurrentHealth;                      // How much health the tank currently has.
         private bool m_Dead;                                // Has the tank been reduced beyond zero health yet?
 
-        private void explode()
-        {
-            tankHead.isKinematic = false;
-            tankHead.useGravity = true;
-            tankHead.GetComponent<MeshCollider>().enabled = true;
-            tankHead.AddForce(0, 0.1f, 0);
-        }
         private void Awake ()
         {
             // Instantiate the explosion prefab and get a reference to the particle system on it.
@@ -53,9 +45,6 @@ namespace Complete
             // Update the health slider's value and color.
             SetHealthUI();
 
-            tankHead.isKinematic = false;
-            tankHead.useGravity = false;
-            tankHead.GetComponent<MeshCollider>().enabled = false;
         }
 
 
@@ -134,11 +123,9 @@ namespace Complete
 
             // Play the tank explosion sound effect.
             m_ExplosionAudio.Play();
-
-            explode();
-
+            
             // Turn the tank off.
-            //gameObject.SetActive (false);
+            gameObject.SetActive (false);
         }
         public float getCurrentHealth()
         {
