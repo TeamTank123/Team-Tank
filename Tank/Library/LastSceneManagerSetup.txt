@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/main menu.unity
+- path: C:/Users/Marlon/Documents/#Hochschule Archiv/3. Semester/Projekt/Tanks/Assets/_Scenes/Winterscene.unity
   isLoaded: 1
   isActive: 1
