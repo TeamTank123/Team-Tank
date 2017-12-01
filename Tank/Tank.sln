@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank.Plugins", "Tank.Plugins.csproj", "{75410702-13E2-0B99-E8CE-402919C3542B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank", "Tank.csproj", "{055222EF-1698-3CED-1683-95953C3EB249}"
