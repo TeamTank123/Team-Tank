@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Complete-Game.unity
+=======
+- path: C:/Users/Marlon/Documents/#Hochschule Archiv/3. Semester/Projekt/Tanks/Assets/_Scenes/Winterscene.unity
+>>>>>>> 7bdfe6f94935ce14fb8b1bf00ef1b1e654941fd4
   isLoaded: 1
   isActive: 1

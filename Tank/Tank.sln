@@ -1,7 +1,13 @@
 ﻿
+<<<<<<< HEAD
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank", "Assembly-CSharp-firstpass.csproj", "{C0446BC7-C49A-C8A3-A1BF-84B00C7B2553}"
+=======
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank.Plugins", "Tank.Plugins.csproj", "{75410702-13E2-0B99-E8CE-402919C3542B}"
+>>>>>>> 7bdfe6f94935ce14fb8b1bf00ef1b1e654941fd4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tank", "Assembly-CSharp.csproj", "{BE59C06D-9AAC-64A8-0390-8CA6FBC949DD}"
 EndProject
