@@ -14,8 +14,6 @@ namespace Complete
         public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
         public GameObject m_TankPrefab;             // Reference to the prefab the players will control.
         public TankManager[] m_Tanks;               // A collection of managers for enabling and disabling different aspects of the tanks.
-        public float powerUpSpawnCd = 10f;
-        public Rigidbody powerUp;
 
         private float _powerUpSpawnCdMax;
         private int m_RoundNumber;                  // Which round the game is currently on.
@@ -24,10 +22,10 @@ namespace Complete
         private TankManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
         private TankManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
 
+        private bool _shieldSpawnAble = true;
 
         private void Start()
         {
-            _powerUpSpawnCdMax = powerUpSpawnCd;
             // Create the delays so they only have to be made once.
             m_StartWait = new WaitForSeconds (m_StartDelay);
             m_EndWait = new WaitForSeconds (m_EndDelay);
@@ -37,23 +35,8 @@ namespace Complete
 
             // Once the tanks have been created and the camera is using them as targets, start the game.
             StartCoroutine (GameLoop ());
-        }
 
-        private void Update()
-        {
-            powerUpSpawnCd -= Time.deltaTime;
-            if (powerUpSpawnCd <= 0)
-            {
-                powerUpSpawnCd = _powerUpSpawnCdMax;
-                SpawnPowerUp();
-            }
-        }
-
-
-        private void SpawnPowerUp()
-        {
-            powerUp.transform.position = new Vector3(Random.Range(-40.0f, 40.0f), 0, Random.Range(-40.0f, 40.0f));
-            Rigidbody mineInstance = Instantiate(powerUp) as Rigidbody;
+            
         }
 
         private void SpawnAllTanks()
