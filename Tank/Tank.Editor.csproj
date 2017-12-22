@@ -279,13 +279,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Tank.Plugins.csproj">
-      <Project>{75410702-13E2-0B99-E8CE-402919C3542B}</Project>
-      <Name>Tank.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Tank.csproj">
       <Project>{055222EF-1698-3CED-1683-95953C3EB249}</Project>
       <Name>Tank</Name>
+    </ProjectReference>
+    <ProjectReference Include="Tank.Plugins.csproj">
+      <Project>{75410702-13E2-0B99-E8CE-402919C3542B}</Project>
+      <Name>Tank.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

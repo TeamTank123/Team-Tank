@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Completed-Assets/Scenes/main menu.unity
+- path: Assets/_Scenes/Wintermap_neu.unity
   isLoaded: 1
   isActive: 1
