@@ -11,11 +11,6 @@ public class CoOpoption : MonoBehaviour {
 
 
 
-    void Start()
-    {
-        print(map+" "+shield);
-    }
-	// Update is called once per frame
 	public void loadScene() {
         SceneManager.LoadScene(map+1);
         print(shield + " " + canister + " " + map);

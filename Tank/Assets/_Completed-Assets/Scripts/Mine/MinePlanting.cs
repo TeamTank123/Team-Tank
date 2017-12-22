@@ -7,17 +7,22 @@ public class MinePlanting : MonoBehaviour {
 	public int m_PlayerNumber = 1; 
 	public Rigidbody mine; 
 	public Transform tankTransform;
+    public float mineCd = 3f;
 
+    private float _mineCd;
 	private string _mineButton;
 
 
 	private void Start ()
 	{
+        _mineCd = mineCd;
 		_mineButton = "Mine" + m_PlayerNumber;
 	}
 
 	void Update () {
-		if (Input.GetButtonDown (_mineButton))
+
+        mineCd -= Time.deltaTime;
+		if (Input.GetButtonDown (_mineButton) && mineCd <= 0f)
 		{
 			Plant ();
 		}
@@ -28,5 +33,7 @@ public class MinePlanting : MonoBehaviour {
 		mine.transform.position = new Vector3(tankTransform.position.x, 0.1f, tankTransform.position.z);
 		Rigidbody mineInstance =
 			Instantiate (mine) as Rigidbody;
+
+        mineCd = _mineCd;
 	}
 }
