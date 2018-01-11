@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MinePlanting : MonoBehaviour {
 
+    public Renderer meshrenderer;
 	public int m_PlayerNumber = 1; 
 	public Rigidbody mine; 
 	public Transform tankTransform;
