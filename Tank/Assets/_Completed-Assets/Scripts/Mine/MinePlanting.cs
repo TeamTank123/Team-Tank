@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MinePlanting : MonoBehaviour {
 
-    public Renderer meshrenderer;
-	public int m_PlayerNumber = 1; 
+
+    public Slider slider;                        
+    public Image fillImage;
+    public int m_PlayerNumber = 1; 
 	public Rigidbody mine; 
 	public Transform tankTransform;
     public float mineCd = 3f;
@@ -27,7 +30,8 @@ public class MinePlanting : MonoBehaviour {
 		{
 			Plant ();
 		}
-	}
+        SetMineUI();
+    }
 
 	public void Plant ()
 	{
@@ -37,4 +41,10 @@ public class MinePlanting : MonoBehaviour {
 
         mineCd = _mineCd;
 	}
+
+    private void SetMineUI()
+    {
+        slider.value = 100/(_mineCd/ mineCd);
+        
+    }
 }
