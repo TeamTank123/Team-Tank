@@ -1,0 +1,42 @@
+Einführung
+
+Als Ausgangssituation diente uns das Unity-Tank Tutorial. In dem Tutorial wurde beschrieben, wie man die Kamera
+Steuerung und den Tank programmiert.
+
+Wir wollten dieses Tutorial mit unseren Ideen erweitern, damit das Spiel mehr Spaß macht und spannender ist.
+Daraus haben wir unsere Arbeitspakete abgeleited. Die Arbeitspakete lauten:
+
+Da wir ein Team aus zwei Personen sind, haben wir die Rollen Modelierer
+(Marlon Wagner) und Programmierer (Kim Tischler)
+
+Analyse
+
+KI: Unity stellt den sogenannten "Path Finding" Algorithmus zu verfügung den man
+benutzen kann,damit die KI zu ihrem Ziel findet.
+
+Particle Effekte: In Unity gibt es ein eigenes Particle System womit man
+die Particle Effekte erstellen kann.
+
+3D Models: Wir sind davon ausgegeangen das wir nicht alle 3D Models selbst mit
+Blender modulieren,da die Zeit dafür nicht ausreicht.Sondern auch schon fertige Models benutzen.
+
+
+Konzept
+
+Das Spiel soll spannender werden und nicht dadurch sein Grundkonzept verlieren
+was sich durch LowPoly 3D Models und keine GUI Elemente auszeichnet.
+
+Durch das hinzufügen von Minen,KI und Turrets wird der Spieler mehr gefordert.
+Er muss sich die ganze zeit bewegen und aufpassen wo er hinfehrt.
+
+Powerups wie die Shielde oder Cannister sorgen dafür das eine wendung in das
+Spiel kommt und dadurch Spannend bleibt.
+
+Eine neue Map sorgt für generelle abweschlung, da das eine Snow-Map ist haben
+wir für das feeling Snow-Particle-Effekts hinzugefügt.
+
+
+
+Menu,Snow Particles,Mine,Mine reaktion Explosion,Sounds,Powerup Shield,
+New Map,KI,Turret,Powerup Canister,Traps,Tank Wrack,Singleplayer,Multiplayer,
+3D Models,Dmg Smoke Particles
