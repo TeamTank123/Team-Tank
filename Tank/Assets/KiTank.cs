@@ -18,7 +18,6 @@ public class KiTank : MonoBehaviour {
     public float bulletSpeed;
 
     public AudioSource fireAudio;
-    public AudioSource reloadAudio;
 
     private float fireCdTmp;
     private GameObject[] _enemy;
@@ -140,7 +139,6 @@ public class KiTank : MonoBehaviour {
         if (nearestEnemy != null && shortestDistance <= range && target != nearestEnemy.transform)
         {
             target = nearestEnemy.transform;
-            reloadAudio.Play();
 
         }
         else if (shortestDistance > range)

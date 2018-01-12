@@ -45,6 +45,10 @@ public class spawn : MonoBehaviour {
         {
             iSpawnableScript.setSpawner(this);
         }
+        if (newSpawnObject.tag == "Tank")
+        {
+            //add path for the ki
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -52,5 +56,9 @@ public class spawn : MonoBehaviour {
         Gizmos.color = new Color(1, 0, 0, 0.45f);
         Gizmos.DrawCube(center, size);
     }
-
+    public void reset()
+    {
+        spawnTimer = spawnCd;
+        spawnLimit++;
+    }
 }

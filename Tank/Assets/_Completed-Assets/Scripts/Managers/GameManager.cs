@@ -21,6 +21,7 @@ namespace Complete
         private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
         private TankManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
         private TankManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
+        public GameObject[] _objectsToReset;
 
         private bool _shieldSpawnAble = true;
 
@@ -92,6 +93,7 @@ namespace Complete
             {
                 // If there isn't a winner yet, restart this coroutine so the loop continues.
                 // Note that this coroutine doesn't yield.  This means that the current version of the GameLoop will end.
+                reset();
                 StartCoroutine (GameLoop ());
             }
         }
@@ -262,6 +264,45 @@ namespace Complete
             for (int i = 0; i < m_Tanks.Length; i++)
             {
                 m_Tanks[i].DisableControl();
+            }
+        }
+
+        private void reset()
+        {
+            _objectsToReset = GameObject.FindGameObjectsWithTag("Shield");
+            foreach (GameObject objectToReset in _objectsToReset)
+            {
+                Destroy(objectToReset);
+            }
+
+            _objectsToReset = GameObject.FindGameObjectsWithTag("Canister");
+            foreach (GameObject objectToReset in _objectsToReset)
+            {
+                Destroy(objectToReset);
+            }
+
+            _objectsToReset = GameObject.FindGameObjectsWithTag("Turret");
+            foreach (GameObject objectToReset in _objectsToReset)
+            {
+                Destroy(objectToReset);
+            }
+
+            _objectsToReset = GameObject.FindGameObjectsWithTag("KiTank");
+            foreach (GameObject objectToReset in _objectsToReset)
+            {
+                Destroy(objectToReset);
+            }
+
+            _objectsToReset = GameObject.FindGameObjectsWithTag("Mine");
+            foreach (GameObject objectToReset in _objectsToReset)
+            {
+                Destroy(objectToReset);
+            }
+
+            _objectsToReset = GameObject.FindGameObjectsWithTag("Spawn");
+            foreach (GameObject spawn in _objectsToReset)
+            {
+                spawn.GetComponent<spawn>().reset();
             }
         }
     }
