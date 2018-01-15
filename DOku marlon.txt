@@ -1,0 +1,18 @@
+Umsetzung
+Objektmodellierung
+Um einige der Arbeitspackete umzusetzen war es nötig drittanbieter Software zu verwenden. Dies geschah hauptsächlich bei der Modellierung neuer Objekte zum Erweitern der Spielwelt. Hierfür zogen wir Blender, ein Open Source 3D creation suite, hinzu. 
+Mit Blender war es uns dann zum Beispiel möglich Neue Bäume zu Modellieren die natürlich vom Konzept her am Grafikstil ansetzten.
+ 
+Abbildung: Objektmodellierung mit Blender
+Zu Beginn erstellten wir eine Liste von Objekten welche wir für ein neues Level gebrauchen konnten, beziehungsweise welche bestehenden Objekte wir gegebenfalls ummodellieren.
+
+
+Leveldesign
+
+
+
+
+	
+
+Beim Leveldesign entschieden wir uns für eine Scene die mit Schnee bedeckt sein sollte, einen Kontrast zum alten Level. Es sollte ein offener nicht allzu unübersichtlicher Level werden mit zum Thema passenden Objekten wie zum Beispiel Holzhütten.
+ Um den Effekt von mit Schnee bedeckten Objekten herbeizuführen, nutzten wir Materialien. Hierfür wählten wir in Blender bei Objekten einzelne Faces aus und vergaben diese unterschiedliche Materialien. Nach dem Importieren nach Unity hatten wir nun verschiedene Elemente die mit Materialien versehen werden konnten.
